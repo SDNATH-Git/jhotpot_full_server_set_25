@@ -182,6 +182,47 @@ async function run() {
             }
         });
 
+          // Get current user
+  app.get("/users/me", verifyFBToken, async (req, res) => {
+    try {
+      const email = req.decoded.email;
+      const user = await usersCollection.findOne({ email });
+      if (!user) return res.status(404).send({ message: "User not found" });
+
+      // convert _id to string for frontend
+      user._id = user._id.toString();
+      res.send(user);
+    } catch (err) {
+      console.error(err);
+      res.status(500).send({ message: "Failed to fetch user" });
+    }
+  });
+
+  // Update current user
+  app.patch("/users/update/:id", verifyFBToken, async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updateData = req.body;
+
+      const result = await usersCollection.updateOne(
+        { _id: new ObjectId(id) },
+        { $set: updateData }
+      );
+
+      if (result.modifiedCount === 0) {
+        return res.status(400).send({ message: "Nothing updated" });
+      }
+
+      res.send({ message: "Profile updated successfully" });
+    } catch (err) {
+      console.error(err);
+      res.status(500).send({ message: "Update failed" });
+    }
+  });
+
+
+
+  
 
         // parcels api
         // GET: All parcels OR parcels by user (created_by), sorted by latest
