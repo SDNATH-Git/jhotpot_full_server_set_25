@@ -6,9 +6,7 @@ const admin = require("firebase-admin");
 
 // Load environment variables from .env file
 dotenv.config();
-
 const stripe = require('stripe')(process.env.PAYMENT_GATEWAY_KEY);
-
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -28,8 +26,6 @@ admin.initializeApp({
 
 // MonoDB connection
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.y7n1te0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-
-
 
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -52,11 +48,11 @@ async function run() {
         const trackingsCollection = db.collection("trackings");
         const paymentsCollection = db.collection('payments');
         const ridersCollection = db.collection('riders');
-         const chatRoutes = require("./routes/chatRoutes");
+        const chatRoutes = require("./routes/chatRoutes");
 
 
 
-        // custom middlewares
+        // custom middlewares.................
         const verifyFBToken = async (req, res, next) => {
             const authHeader = req.headers.authorization;
             if (!authHeader) {
