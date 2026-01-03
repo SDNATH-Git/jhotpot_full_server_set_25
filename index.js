@@ -217,8 +217,6 @@ async function run() {
 
 
 
-  
-
         // parcels api
         // GET: All parcels OR parcels by user (created_by), sorted by latest
         app.get('/parcels', verifyFBToken, async (req, res) => {
@@ -667,7 +665,7 @@ run().catch(console.dir);
 
 // Sample route
 app.get('/', (req, res) => {
-    res.send('Parcel Server is running');
+    res.send('Jhotpot Server is running');
 });
 
 // Start the server
