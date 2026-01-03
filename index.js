@@ -475,6 +475,7 @@ async function run() {
             res.status(201).json(result);
         });
 
+        // riders apis
         app.post('/riders', async (req, res) => {
             const rider = req.body;
             const result = await ridersCollection.insertOne(rider);
