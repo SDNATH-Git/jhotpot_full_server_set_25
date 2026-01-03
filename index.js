@@ -117,7 +117,7 @@ async function run() {
 
 
 
-         // AI chatRoutes
+         //AI chatRoutes - Gemini
         app.use("/api", chatRoutes());
 
 
