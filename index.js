@@ -438,7 +438,7 @@ async function run() {
         });
 
 
-
+        // Delete a parcel
         app.delete('/parcels/:id', async (req, res) => {
             try {
                 const id = req.params.id;
