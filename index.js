@@ -361,6 +361,7 @@ async function run() {
             }
         });
 
+        // assign rider to parcel
         app.patch("/parcels/:id/assign", async (req, res) => {
             const parcelId = req.params.id;
             const { riderId, riderName, riderEmail } = req.body;
