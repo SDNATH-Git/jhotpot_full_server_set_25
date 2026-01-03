@@ -494,6 +494,7 @@ async function run() {
             }
         });
 
+        // active riders
         app.get("/riders/active", verifyFBToken, verifyAdmin, async (req, res) => {
             const result = await ridersCollection.find({ status: "active" }).toArray();
             res.send(result);
