@@ -423,6 +423,7 @@ async function run() {
             }
         });
 
+        // cashout parcel
         app.patch("/parcels/:id/cashout", async (req, res) => {
             const id = req.params.id;
             const result = await parcelsCollection.updateOne(
@@ -436,7 +437,6 @@ async function run() {
             );
             res.send(result);
         });
-
 
         // Delete a parcel
         app.delete('/parcels/:id', async (req, res) => {
