@@ -517,6 +517,7 @@ async function run() {
             }
         });
 
+        // update rider status
         app.patch("/riders/:id/status", async (req, res) => {
             const { id } = req.params;
             const { status, email } = req.body;
