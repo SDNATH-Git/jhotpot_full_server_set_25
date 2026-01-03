@@ -498,7 +498,8 @@ async function run() {
             const result = await ridersCollection.find({ status: "active" }).toArray();
             res.send(result);
         });
-
+        
+        // available riders
         app.get("/riders/available", async (req, res) => {
             const { district } = req.query;
 
