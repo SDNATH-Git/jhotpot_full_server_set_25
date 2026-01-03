@@ -463,6 +463,7 @@ async function run() {
             res.json(updates);
         });
 
+        // Add tracking updates
         app.post("/trackings", async (req, res) => {
             const update = req.body;
 
