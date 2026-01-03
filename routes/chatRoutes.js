@@ -20,7 +20,7 @@ module.exports = function () {
     const isBangla = /[\u0980-\u09FF]/.test(message);
 
     // ===============================
-    // 🔥 ENGLISH INTENTS (Jhotpot)
+    // 🔥 ENGLISH INTENTS (Jhotpot-chatBot)
     // ===============================
     if (!isBangla) {
       if (msgLower.includes("hi") || msgLower.includes("hello")) {
