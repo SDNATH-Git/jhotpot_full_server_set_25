@@ -12,6 +12,7 @@ const stripe = require('stripe')(process.env.PAYMENT_GATEWAY_KEY);
 const app = express();
 const port = process.env.PORT || 3000;
 
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -45,7 +46,7 @@ const client = new MongoClient(uri, {
 async function run() {
     try {
         // Connect the client to the server	(optional starting in v4.7)
-        await client.connect();
+        // await client.connect();
 
         const db = client.db('parcelDB'); // database name
         const usersCollection = db.collection('users');
