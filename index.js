@@ -634,7 +634,7 @@ async function run() {
         });
 
 
-
+         // Create payment intent
         app.post('/create-payment-intent', async (req, res) => {
             const amountInCents = req.body.amountInCents
             try {
