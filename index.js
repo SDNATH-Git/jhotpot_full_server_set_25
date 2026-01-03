@@ -481,6 +481,7 @@ async function run() {
             res.send(result);
         })
 
+        // pending riders
         app.get("/riders/pending", verifyFBToken, verifyAdmin, async (req, res) => {
             try {
                 const pendingRiders = await ridersCollection
