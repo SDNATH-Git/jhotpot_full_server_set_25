@@ -569,7 +569,7 @@ async function run() {
             res.send({ success: true, insertedId: result.insertedId });
         });
 
-
+         // payment apis
         app.get('/payments', verifyFBToken, async (req, res) => {
 
             try {
