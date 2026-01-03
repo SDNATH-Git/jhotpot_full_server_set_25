@@ -63,7 +63,7 @@ async function run() {
                 return res.status(401).send({ message: 'unauthorized access' })
             }
 
-            // verify the token
+            // verify the jwt token
             try {
                 const decoded = await admin.auth().verifyIdToken(token);
                 req.decoded = decoded;
