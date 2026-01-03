@@ -396,6 +396,7 @@ async function run() {
             }
         });
 
+        // update parcel status
         app.patch("/parcels/:id/status", async (req, res) => {
             const parcelId = req.params.id;
             const { status } = req.body;
